@@ -13,10 +13,8 @@ services:
   db:
     image: postgres:15
     restart: always
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
+    env_file:
+      - .env
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
